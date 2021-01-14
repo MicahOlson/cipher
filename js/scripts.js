@@ -1,22 +1,22 @@
-// let userSentence = prompt("Please enter a sentence.");
-// console.log(userSentence);
-
 function getFirstLast(sentence) {
-  let firstLast = sentence.slice(0, 1) + sentence.slice(-2, -1);
-  return firstLast.toUpperCase();
+  return sentence.slice(0, 1).toUpperCase() + sentence.slice(-2, -1).toUpperCase();
 }
 
-function reverseLetters(firstLast) {
-  return firstLast.slice(-1) + firstLast.slice(0, 1);
+function reverseLetters(twoLetters) {
+  return twoLetters.slice(-1) + twoLetters.slice(0, 1);
 }
 
-// console.log(getFirstLast(userSentence));
-// console.log(reverseLetters(getFirstLast(userSentence)));
-
-
-function getAndConvertSentence() {
-  let userSentence = prompt("Please enter a sentence.");
-  return userSentence.slice(0, -1) + reverseLetters(getFirstLast(userSentence)) + userSentence.slice(-1);
+function getAndConvertSentence(sentence) {
+  return sentence.slice(0, -1) + reverseLetters(getFirstLast(sentence)) + sentence.slice(-1);
 }
 
-console.log(getAndConvertSentence());
+function prependMidPoint(sentence) {
+  return sentence.charAt(Math.floor(sentence.length / 2)) + sentence;
+}
+
+function reverseSentence(sentence) {
+  return sentence.split("").reverse().join("");
+}
+
+const userSentence = prompt("Please enter a sentence.");
+console.log(reverseSentence(prependMidPoint(getAndConvertSentence(userSentence))));
