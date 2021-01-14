@@ -19,4 +19,14 @@ function reverseSentence(sentence) {
 }
 
 const userSentence = prompt("Please enter a sentence.");
-console.log(reverseSentence(prependMidPoint(getAndConvertSentence(userSentence))));
+const cipher = reverseSentence(prependMidPoint(getAndConvertSentence(userSentence)));
+
+$(document).ready(function() {
+  $("button#original").click(function() {
+    $("p").text(userSentence);
+  });
+
+  $("button#cipher").click(function() {
+    $("p").text(cipher);
+  });
+});
